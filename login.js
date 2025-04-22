@@ -78,8 +78,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         emailError.textContent = 'Email is required';
         emailError.style.display = 'block';
         isValid = false;
-    } else if (!email.includes('@') || !email.includes('.edu')) {
-        emailError.textContent = 'Please enter a valid institutional email address';
+    } else if (!email.includes('@') || !email.includes('.gehu.ac.in')) {
+        emailError.textContent = 'Please enter a valid Gehu College email address';
         emailError.style.display = 'block';
         isValid = false;
     } else {
