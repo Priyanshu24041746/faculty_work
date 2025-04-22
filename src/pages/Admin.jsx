@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import './admin.css'
+import './Admin.css'
 
 const Admin = () => {
   const [activeTab, setActiveTab] = useState('faculty')

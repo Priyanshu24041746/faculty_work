@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import './dashboard.css'
+import './Dashboard.css'
 
 const Dashboard = () => {
   const [stats, setStats] = useState({

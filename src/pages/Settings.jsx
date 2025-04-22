@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '@fortawesome/fontawesome-free/css/all.min.css'
-import './settings.css'
+import './Settings.css'
 
 const Settings = () => {
   const [settings, setSettings] = useState({
