@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const Login = () => {
   const navigate = useNavigate()
@@ -9,6 +10,10 @@ const Login = () => {
   const [alertType, setAlertType] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [capsLockOn, setCapsLockOn] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
 
   const closeAlert = () => {
     setShowAlert(false)
@@ -51,6 +56,7 @@ const Login = () => {
         
         <div className="login-header">
             <div className="logo">
+                <i className="fas fa-clock fa-2x"></i>
                 <h2>FWHT</h2>
             </div>
             <h1>Faculty Work Hours Tracker</h1>
@@ -59,9 +65,18 @@ const Login = () => {
         
         <form id="loginForm" noValidate onSubmit={handleSubmit}>
             <div className="input-group">
-                <label htmlFor="email">Institutional Email</label>
+                <label htmlFor="email">
+                    <i className="fas fa-envelope"></i> Institutional Email
+                </label>
                 <div className="input-field">
-                    <input type="email" id="email" name="email" placeholder="name@institution.edu" required autoComplete="email" />
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="name@institution.edu" 
+                        required 
+                        autoComplete="email" 
+                    />
                     <span className="input-icon">
                         <i className="fas fa-envelope"></i>
                     </span>
@@ -70,7 +85,9 @@ const Login = () => {
             </div>
             
             <div className="input-group">
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">
+                    <i className="fas fa-lock"></i> Password
+                </label>
                 <div className="input-field">
                     <input 
                         type={showPassword ? "text" : "password"} 
@@ -103,15 +120,19 @@ const Login = () => {
             <div className="additional-options">
                 <div className="remember-me">
                     <input type="checkbox" id="remember" name="remember" />
-                    <label htmlFor="remember">Remember me</label>
+                    <label htmlFor="remember">
+                        <i></i> Remember me
+                    </label>
                 </div>
                 <div className="forgot-password">
-                    <a href="#" id="forgot-password-link">Forgot Password?</a>
+                    <Link to="/it">
+                        <i className="fas fa-question-circle"></i> Forgot Password?
+                    </Link>
                 </div>
             </div>
             
             <button type="submit" id="login-button" className="login-btn">
-                Login
+                <i className="fas fa-sign-in-alt"></i> Login
                 <span className="spinner" id="login-spinner"></span>
             </button>
             
@@ -125,7 +146,11 @@ const Login = () => {
             
             <div className="footer">
                 <p>© 2025 Faculty Work Hours Tracker</p>
-                <p>Need help? <Link to="/it">Contact IT Support</Link></p>
+                <p>
+                    <Link to="/it">
+                        <i className="fas fa-headset"></i> Need help? Contact IT Support
+                    </Link>
+                </p>
                 <div className="security-badge">
                     <i className="fas fa-lock"></i> Your connection to this site is secure
                 </div>
